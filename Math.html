@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math</title>
+</head>
+<body>
+<script>
+	回顾：
+				               单体内置对象
+			                  Global 和 Math
+		在所有代码执行前，作用域中就已经存在两个内置对象:Global(全局)和Math。在大多数ES实现中都不能直接访问Global对象。不过，WEB浏览器实现了承担该角色的window对象。全局变量和函数都是Global对象的属性。详细参考P131
+		
+
+		Math对象提供了很多属性和方法，用于辅助完成复杂的数学计算任务。
+
+		$：Math对象的属性
+			Math对象包含的属性大都是数学计算中可能会用到一些特殊值。
+		例：
+			属性                          说明    
+			Math.E         自然对数的底数，即常量e的值  2.718281828459045
+			Math.LN10      10的自然对数       2.302585092994046
+			Math.LN2       2的自然对数        0.6931471805599453
+			Math.LOG2E     以2为底e的对数     1.4426950408889634
+			Math.LOG10E    以10为底e的对数    0.4342944819032518
+			Math.PI        π的值              3.141592653589793
+			Math.SQRT1_2   1/2的平方根        0.7071067811865476
+			Math.SQRT2     2的平方根		  1.4142135623730951
+
+		$:Math.min() 和  Math.max()  这两个方法用于确定一组数值中的最小值和最大值。
+		例：
+			var min = Math.min(1,2,3,4,5); //1
+			var min = Math.max(1,2,3,4,5); //5
+			//可以隐式类型转换
+			var min = Math.min(1,2,3,4,"5"); //NAN
+			var min = Math.max(1,2,3,4,"5"); //NAN
+		如果要想找到数组的最大最小值，用apply()方法
+		例：
+			var arr = [1,2,3,4,5];
+			var min = Math.min.apply(Math,arr);//
+		$:舍入方法
+			* Math.ceil()   Math.ceil()执行向上舍入，即它总是将数值向上舍入为最接近的整数；(向上取整)
+			* Math.floor()  执行向下舍入，即它总是将数值向下舍入为最接近的整数；(向下取整)
+			* Math.round()  执行标准舍入，即它总是将数值四舍五入为最接近的整数；(四舍五入) 
+				注意：Math.round(4.499999999999999999999);
+
+		$:Math.random() 方法 返回大于等于0小于1的一个随机数  0 <= x < 1
+
+		封装一个方法:随机生成n到m的随机数。
+		function random(n,m){
+			var num = m-n+1;
+			return Math.floor(Math.random()*num + n);
+		}
+
+		$:其他方法
+			方法                               说明
+
+			Math.abs(number)                   返回number的绝对值
+			Math.exp(number)                   返回Math.E的number次幂
+			Math.log(number)                   返回number的自然对数
+			Math.pow(number,power)             返回number的power次幂
+			Math.sqrt(number)                  返回number的平方根
+			Math.acos(x)					   返回x的反余弦值	                         
+			Math.asin(x)                       返回x的反正弦值
+			Math.atan(x)                       返回x的反正切值
+			Math.atan2(y,x)                    返回y/x的反正切值
+			Math.cos(x)                        返回x的余弦值
+			Math.sin(x)                        返回x的正弦值
+			Math.tan(x)                        返回x的正切值
+</script>
+</body>
+</html>

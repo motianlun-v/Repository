@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>声明提升</title>
+</head>
+<body>
+	<script>
+	//题目1
+		/*var str1 = "hello";
+		console.log(str1);  */
+
+	//题目2
+		/*console.log(str2); //报错
+		age = 21;*/
+
+	//题目3
+	/*	console.log(str3);// 报错  没有var 不提升
+	 str3 = 'hello';	*/
+
+	//题目4
+
+		// console.log(str4); // underfinde  
+		// var str4 = 'hello';
+	
+	//题目5
+		// var str5 = "hello";
+		// function fn(){
+		// 	console.log(str5);//hello
+		// }
+		// fn();
+	
+	//题目6
+		/*var str6 = "hello";
+		function fn(){
+			console.log(str6);//hello
+			str6 = "world"; // 没有var 不提升
+		}
+		fn();*/
+	//题目7
+		/*var str7 = "hello";
+		function fn(){
+			console.log(str7);//underfind
+			var str7 = "world";
+		}
+		fn();*/
+		
+	//题目8
+		/*var arr1 = [1,2,3];
+		function fn(){
+			if(typeof arr1 == "undefined"){//type 返回array
+				arr1 = [];
+			}
+			console.log(arr1.length);   //3
+		}
+		fn();*/
+	//题目9
+		// var arr2 = [1,2,3];
+		// function fn(){
+		// 	if(typeof arr2 == "undefined"){ 
+		// 		var arr2 = [];  //var 隔着if 提升
+		// 	}
+		// 	console.log(arr2.length); //0
+		// }
+		// fn();
+		
+	//题目10
+		// console.log(typeof fn1);//function
+		// function fn1(){}
+	//题目11
+		/*console.log(typeof fn2);//underfind
+		var fn2 = function(){}*/
+		
+	//题目12
+		/*var str = "hello";
+		function fn(){
+			console.log(str);//hello
+			function fn1(){
+				console.log(str);//underfind
+				var str = "world";
+				console.log(str);//world
+				console.log(this.str);//hello
+				function fn2(){
+					console.log(str);//world
+					str = "world2";
+					console.log(str);//world2
+					console.log(this.str);//hello
+				}
+				fn2();
+				console.log(str);
+				str = "world3";
+			}
+			fn1();
+			console.log(str);
+		}
+		fn();
+		console.log(str);*/
+
+
+
+
+
+		// var str = 4;
+		// function fn(str){
+		// 	console.log(str);
+		// 	str = 2;
+		// 	console.log(str);
+		// 	console.log(this.str);
+		// 	console.log(str == this.str);
+		// }
+		// fn(str);
+		// console.log(str);
+		// function fn(obj){
+			// obj.name = "hello";
+			// obj = new Object();
+			// obj.name = "world";
+		// 	console.log(obj.name);
+		// }
+		// var person = new Object();
+		// fn(person);
+		// console.log(person.name);
+		// console.log(person instanceof Object); 
+
+	</script>
+</body>
+</html>
